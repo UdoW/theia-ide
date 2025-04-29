@@ -9,6 +9,9 @@ WORKDIR /home/theia
 # Copy repository files
 COPY . .
 
+# Increase memory for node's Javascript engine
+ENV NODE_OPTIONS='--max_old_space_size=4096'
+
 # Remove unnecesarry files for the browser application
 # Download plugins and build application production mode
 # Use yarn autoclean to remove unnecessary files from package dependencies
